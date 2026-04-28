@@ -1,17 +1,677 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Менің сайтым</title>
-  <style>
-    body { font-family: Arial; text-align: center; background: #1a1a2e; color: white; padding: 50px; }
-    h1 { font-size: 3em; color: #e94560; }
-    p { font-size: 1.2em; color: #a8a8b3; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Жылы Кофе — Астана</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf6f1;
+    --brown: #3d2314;
+    --mocha: #7c4a2d;
+    --latte: #c8a27a;
+    --foam: #f0e6d8;
+    --text: #2a1a0e;
+    --muted: #8a6a52;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--brown);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(200,162,122,0.15), transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(124,74,45,0.3), transparent 50%);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid rgba(200,162,122,0.4);
+    color: var(--latte);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    position: relative;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 12vw, 72px);
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    position: relative;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    color: var(--latte);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(240,230,216,0.7);
+    font-weight: 300;
+    margin-bottom: 48px;
+    position: relative;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--latte), #a07845);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 8px 24px rgba(200,162,122,0.3);
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(200,162,122,0.4); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(200,162,122,0.5);
+    color: var(--latte);
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-outline:hover { background: rgba(200,162,122,0.1); transform: translateY(-2px); }
+
+  /* SCROLL INDICATOR */
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(200,162,122,0.5);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: fadeUp 1s 0.6s ease both;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--latte), transparent);
+    animation: scrollDown 2s ease infinite;
+  }
+
+  @keyframes scrollDown {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ABOUT */
+  .about {
+    padding: 80px 24px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--mocha);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 7vw, 40px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .section-text {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.85;
+    font-weight: 300;
+  }
+
+  /* STATS */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--foam);
+    border-top: 1px solid var(--foam);
+    border-bottom: 1px solid var(--foam);
+    margin: 0 0 0 0;
+  }
+
+  .stat {
+    background: var(--cream);
+    padding: 32px 16px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--mocha);
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* MENU */
+  .menu-section {
+    padding: 80px 24px;
+    background: var(--brown);
+  }
+
+  .menu-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .menu-header .section-label { color: var(--latte); }
+  .menu-header .section-title { color: var(--cream); }
+
+  .menu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .menu-category {
+    margin-bottom: 8px;
+  }
+
+  .menu-cat-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--latte);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(200,162,122,0.2);
+  }
+
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .menu-item:last-child { border-bottom: none; }
+
+  .menu-name {
+    font-size: 15px;
+    color: var(--cream);
+    font-weight: 400;
+  }
+
+  .menu-desc {
+    font-size: 12px;
+    color: rgba(200,162,122,0.6);
+    margin-top: 3px;
+  }
+
+  .menu-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--latte);
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 16px;
+  }
+
+  /* HOURS & LOCATION */
+  .info-section {
+    padding: 80px 24px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .info-card {
+    background: var(--foam);
+    border-radius: 20px;
+    padding: 28px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: transform 0.3s;
+  }
+  .info-card:hover { transform: translateY(-2px); }
+
+  .info-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+
+  .info-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--brown);
+  }
+
+  .info-text {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .info-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    background: var(--brown);
+    color: var(--latte);
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .info-link:hover { background: var(--mocha); transform: translateY(-1px); }
+
+  /* INSTAGRAM */
+  .instagram-section {
+    padding: 80px 24px;
+    background: var(--foam);
+    text-align: center;
+  }
+
+  .instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    max-width: 400px;
+    margin: 32px auto;
+  }
+
+  .insta-placeholder {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--latte), var(--mocha));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    opacity: 0.7;
+  }
+
+  .insta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 8px 24px rgba(220,39,67,0.3);
+  }
+  .insta-btn:hover { transform: translateY(-2px); }
+
+  /* CTA */
+  .cta-section {
+    padding: 80px 24px;
+    background: var(--brown);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 7vw, 40px);
+    color: var(--cream);
+    margin-bottom: 12px;
+  }
+
+  .cta-section p {
+    color: rgba(200,162,122,0.7);
+    font-size: 15px;
+    margin-bottom: 36px;
+  }
+
+  .phone-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--latte);
+    color: var(--brown);
+    padding: 18px 36px;
+    border-radius: 100px;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 8px 24px rgba(200,162,122,0.3);
+  }
+  .phone-btn:hover { transform: translateY(-2px); background: #d4ae88; }
+
+  /* FOOTER */
+  footer {
+    background: #1a0d06;
+    padding: 32px 24px;
+    text-align: center;
+    color: rgba(200,162,122,0.4);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  footer strong { color: var(--latte); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
 </head>
 <body>
-  <h1>Сәлем Әлем! 👋</h1>
-  <p>Бұл менің алғашқы сайтым</p>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">☕ Астана · 2024-ден бері</div>
+  <h1>Жылы <em>Кофе</em></h1>
+  <p class="hero-sub">Әр кесе — жылулық пен сезімнің ұштасуы</p>
+  <div class="hero-btns">
+    <a href="#menu" class="btn-gold">🍽 Мәзірді көру</a>
+    <a href="tel:+77472465381" class="btn-outline">📞 Қоңырау шалу</a>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Төмен қарай
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">50+</div>
+    <div class="stat-label">Сусын түрі</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">7/7</div>
+    <div class="stat-label">Демалыссыз</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">❤️</div>
+    <div class="stat-label">Жүректен</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about reveal">
+  <div class="section-label">Біз туралы</div>
+  <h2 class="section-title">Неге бізді таңдайды?</h2>
+  <p class="section-text">Бiz әр кесені сүйіспеншілікпен дайындаймыз. Тек сапалы кофе дәндері, тек шынайы ингредиенттер. Сізге ең жақсысын беру — біздің мақсатымыз.</p>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="menu-header">
+    <div class="section-label">Мәзір</div>
+    <h2 class="section-title">Не ұсынамыз</h2>
+  </div>
+
+  <div class="menu-grid">
+    <div class="menu-category reveal">
+      <div class="menu-cat-title">☕ Ыстық сусындар</div>
+      <div class="menu-item">
+        <div>
+          <div class="menu-name">Эспрессо</div>
+          <div class="menu-desc">Таза кофе, қою дәм</div>
+        </div>
+        <div class="menu-price">600 ₸</div>
+      </div>
+      <div class="menu-item">
+        <div>
+          <div class="menu-name">Капучино</div>
+          <div class="menu-desc">Кофе + көбік сүт</div>
+        </div>
+        <div class="menu-price">900 ₸</div>
+      </div>
+      <div class="menu-item">
+        <div>
+          <div class="menu-name">Латте</div>
+          <div class="menu-desc">Жұмсақ, сүтті</div>
+        </div>
+        <div class="menu-price">950 ₸</div>
+      </div>
+      <div class="menu-item">
+        <div>
+          <div class="menu-name">Флэт Уайт</div>
+          <div class="menu-desc">Австралия классигі</div>
+        </div>
+        <div class="menu-price">1 000 ₸</div>
+      </div>
+    </div>
+
+    <div class="menu-category reveal">
+      <div class="menu-cat-title">🧊 Суық сусындар</div>
+      <div class="menu-item">
+        <div>
+          <div class="menu-name">Айс Латте</div>
+          <div class="menu-desc">Мұзды, салқын</div>
+        </div>
+        <div class="menu-price">1 100 ₸</div>
+      </div>
+      <div class="menu-item">
+        <div>
+          <div class="menu-name">Матча Латте</div>
+          <div class="menu-desc">Жапон шайы + сүт</div>
+        </div>
+        <div class="menu-price">1 200 ₸</div>
+      </div>
+      <div class="menu-item">
+        <div>
+          <div class="menu-name">Раф кофе</div>
+          <div class="menu-desc">Кілегей + ваниль</div>
+        </div>
+        <div class="menu-price">1 150 ₸</div>
+      </div>
+    </div>
+
+    <div class="menu-category reveal">
+      <div class="menu-cat-title">🥐 Тағам</div>
+      <div class="menu-item">
+        <div>
+          <div class="menu-name">Круассан</div>
+          <div class="menu-desc">Майлы, жаңа піскен</div>
+        </div>
+        <div class="menu-price">700 ₸</div>
+      </div>
+      <div class="menu-item">
+        <div>
+          <div class="menu-name">Чизкейк</div>
+          <div class="menu-desc">Үйде жасалған</div>
+        </div>
+        <div class="menu-price">1 000 ₸</div>
+      </div>
+      <div class="menu-item">
+        <div>
+          <div class="menu-name">Тост авокадо</div>
+          <div class="menu-desc">Таңертеңгі тамақ</div>
+        </div>
+        <div class="menu-price">1 500 ₸</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="info-section">
+  <div class="section-label reveal" style="text-align:center;margin-bottom:32px">Ақпарат</div>
+  <div class="info-cards">
+    <div class="info-card reveal">
+      <div class="info-icon">🕐</div>
+      <div>
+        <div class="info-title">Жұмыс уақыты</div>
+        <div class="info-text">
+          Дүйсенбі — Жұма: 08:00 – 22:00<br>
+          Сенбі — Жексенбі: 09:00 – 23:00
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card reveal">
+      <div class="info-icon">📍</div>
+      <div>
+        <div class="info-title">Мекенжай</div>
+        <div class="info-text">Астана қ., Мәңгілік Ел даңғылы, 55<br>Метро «Байтерек» — 5 минут жаяу</div>
+        <a href="https://yandex.kz/maps/?text=Астана+Мәңгілік+Ел+55" class="info-link" target="_blank">
+          🗺 Картада көру
+        </a>
+      </div>
+    </div>
+
+    <div class="info-card reveal">
+      <div class="info-icon">📞</div>
+      <div>
+        <div class="info-title">Байланыс</div>
+        <div class="info-text">Брондау немесе сұрақ қою үшін бізге хабарласыңыз</div>
+        <a href="tel:+77472465381" class="info-link">
+          📱 +7 747 246-53-81
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="instagram-section">
+  <div class="section-label reveal">Әлеуметтік желі</div>
+  <h2 class="section-title reveal">Бізді Instagram-да қадағалаңыз</h2>
+  <div class="instagram-grid reveal">
+    <div class="insta-placeholder">☕</div>
+    <div class="insta-placeholder">🥐</div>
+    <div class="insta-placeholder">🍰</div>
+    <div class="insta-placeholder">✨</div>
+    <div class="insta-placeholder">🫖</div>
+    <div class="insta-placeholder">💛</div>
+  </div>
+  <a href="https://instagram.com/zhyly_kofe" class="insta-btn reveal" target="_blank">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    @zhyly_kofe
+  </a>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="reveal">Бүгін келіңіз! ☕</h2>
+  <p class="reveal">Алдын ала брондау немесе тапсырыс беру үшін</p>
+  <a href="tel:+77472465381" class="phone-btn reveal">
+    📞 +7 747 246-53-81
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Жылы Кофе</strong> · Астана, Мәңгілік Ел даңғылы, 55<br>
+  Барлық құқықтар қорғалған © 2026
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
