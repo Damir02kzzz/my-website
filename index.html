@@ -3,53 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZERE | Digital Boutique</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Marmelatte | Астанадағы ең тәтті кофе</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <style>
         :root {
-            --primary: #0A192F; /* Терең көк - салмақтылық */
-            --gold: #C5A059;    /* Алтын - премиум */
+            --marmalade-pink: #FF8FAB; /* Жұмсақ мармелад түсі */
+            --coffee-cream: #FFF5F5;   /* Сүтті крем түсі */
+            --latte-brown: #7B5E57;    /* Қанық кофе түсі */
             --white: #FFFFFF;
-            --gray: #F4F4F4;
         }
 
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--white);
-            color: var(--primary);
-            overflow-x: hidden;
+            background-color: var(--coffee-cream);
+            color: var(--latte-brown);
             scroll-behavior: smooth;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            width: 100%;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(10, 25, 47, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-sizing: border-box;
-        }
-
-        .logo {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 3px;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), 
-                        url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(255,143,171,0.2), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -58,159 +35,129 @@
             align-items: center;
             text-align: center;
             color: var(--white);
-            padding: 0 20px;
         }
 
         .hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(40px, 8vw, 80px);
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(45px, 12vw, 90px);
             margin: 0;
-            letter-spacing: 5px;
+            color: var(--white);
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.3);
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 20px 0;
-            opacity: 0.9;
+            font-size: 1.3rem;
             font-weight: 300;
-        }
-
-        /* Services Section */
-        .section {
-            padding: 100px 50px;
-            text-align: center;
-        }
-
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--gold);
-            margin: 15px auto;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 5px;
-            border: 1px solid #eee;
-            transition: 0.4s;
-            cursor: pointer;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
-
-        .card h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        /* CTA Button */
-        .btn {
-            padding: 15px 40px;
-            background: var(--gold);
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
             letter-spacing: 2px;
-            transition: 0.3s;
-            border: 1px solid var(--gold);
+            margin-top: 15px;
+        }
+
+        /* Menu Section */
+        .section { padding: 80px 20px; max-width: 900px; margin: auto; text-align: center; }
+        
+        h2 { font-family: 'Pacifico', cursive; font-size: 2.5rem; margin-bottom: 40px; color: var(--marmalade-pink); }
+
+        .menu-list {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255,143,171,0.1);
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px dashed var(--marmalade-pink);
+        }
+
+        .item-info { text-align: left; }
+        .item-info h3 { margin: 0; font-size: 1.1rem; }
+        .item-info p { margin: 5px 0 0; font-size: 0.9rem; opacity: 0.7; }
+        .price { font-weight: bold; color: var(--marmalade-pink); font-size: 1.2rem; }
+
+        /* Contact Button */
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: var(--marmalade-pink);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: 0.4s;
+            box-shadow: 0 10px 20px rgba(255,143,171,0.3);
         }
 
         .btn:hover {
-            background: transparent;
-            color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(255,143,171,0.4);
         }
 
-        /* Footer */
         footer {
-            background: var(--primary);
+            background: var(--latte-brown);
             color: var(--white);
-            padding: 50px;
+            padding: 40px 20px;
             text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            nav { padding: 15px 20px; }
-            .section { padding: 60px 20px; }
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">ZERE</div>
-        <a href="#contact" class="btn" style="padding: 10px 20px; font-size: 14px;">КЕҢЕС АЛУ</a>
-    </nav>
-
     <section class="hero">
-        <h1 data-aos="fade-up">ZERE DIGITAL</h1>
-        <p data-aos="fade-up" data-aos-delay="200">Біз сіздің бизнесіңізді цифрлық әлемнің шыңына шығарамыз. Тек қана эксклюзивті шешімдер.</p>
-        <a href="#services" class="btn" data-aos="fade-up" data-aos-delay="400">ЖОБАЛАРДЫ КӨРУ</a>
+        <h1 data-aos="zoom-in">Marmelatte</h1>
+        <p data-aos="fade-up">Астанадағы ең тәтті кофе сәттері</p>
     </section>
 
-    <section id="services" class="section">
-        <h2 class="section-title" data-aos="fade-up">БІЗДІҢ ҚЫЗМЕТТЕР</h2>
-        <div class="grid">
-            <div class="card" data-aos="zoom-in" data-aos-delay="100">
-                <h3>UI/UX ДИЗАЙН</h3>
-                <p>Клиенттердің жүрегінен орын алатын, заманауи әрі ыңғайлы интерфейстер жасау.</p>
+    <section class="section">
+        <h2 data-aos="fade-up">Біздің мәзір</h2>
+        <div class="menu-list" data-aos="fade-up">
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Marmelatte Special</h3>
+                    <p>Авторлық латте & мармелад</p>
+                </div>
+                <span class="price">1650 ₸</span>
             </div>
-            <div class="card" data-aos="zoom-in" data-aos-delay="200">
-                <h3>WEB DEVELOPMENT</h3>
-                <p>Күрделі бизнес-процестерді жеңілдететін, жылдам әрі қауіпсіз веб-сайттар мен платформалар.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Rose Latte</h3>
+                    <p>Нәзік раушан дәмімен</p>
+                </div>
+                <span class="price">1400 ₸</span>
             </div>
-            <div class="card" data-aos="zoom-in" data-aos-delay="300">
-                <h3>BRANDING</h3>
-                <p>Бизнесіңіздің имиджін қалыптастырып, оны нарықта танымал ету стратегиясы.</p>
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Classic Cappuccino</h3>
+                    <p>Талғампаз классика</p>
+                </div>
+                <span class="price">1100 ₸</span>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background: var(--gray);">
-        <h2 class="section-title" data-aos="fade-up">НЕГЕ БІЗ?</h2>
-        <p style="max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.8;">
-            ZERE — бұл жай ғана агенттік емес. Бұл әрбір детальға мән беретін, сапа мен нәтижені бірінші орынға қоятын бутик. Біз "Bastau Business" рухындағы кәсіпкерлерді қолдай отырып, олардың идеяларын әлемдік деңгейге көтеруге көмектесеміз.
-        </p>
+    <section class="section" data-aos="fade-up">
+        <h2>Бізге келіңіз</h2>
+        <p>Астана қ., @marmelatte_ast</p>
+        <p>Жұмыс уақыты: 09:00 - 21:00</p>
+        <a href="https://2gis.kz" class="btn">📍 КАРТАДАН КӨРУ</a>
+        <br><br>
+        <a href="https://instagram.com/marmelatte_ast" target="_blank" style="color: var(--marmalade-pink); text-decoration: none; font-weight: bold;">
+            Instagram: @marmelatte_ast
+        </a>
     </section>
 
-    <footer id="contact">
-        <div class="logo" style="margin-bottom: 20px;">ZERE</div>
-        <p>Астана қаласы, Экспо Орталығы, 17-ші блок</p>
-        <p>info@zere.digital | +7 707 000 00 00</p>
-        <div style="margin-top: 30px; opacity: 0.5; font-size: 12px;">
-            &copy; 2026 ZERE Digital Boutique. Барлық құқықтар қорғалған.
-        </div>
+    <footer>
+        <p>&copy; 2026 Marmelatte Coffee. Барлық құқықтар қорғалған.</p>
+        <p style="opacity: 0.6; font-size: 12px;">Сайтты жасаған: Smart Digital</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1200,
-            once: true
-        });
+        AOS.init({ duration: 1200, once: true });
     </script>
 </body>
 </html>
