@@ -1,4 +1,3 @@
-<img src="Screenshot_20260429_003724_Instagram.jpg" alt="Marmelatte Logo" style="width: 140px; border-radius: 50%; border: 3px solid white; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
 <!DOCTYPE html>
 <html lang="kk">
 <head>
@@ -9,9 +8,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <style>
         :root {
-            --marmalade-pink: #FF8FAB; /* Жұмсақ мармелад түсі */
-            --coffee-cream: #FFF5F5;   /* Сүтті крем түсі */
-            --latte-brown: #7B5E57;    /* Қанық кофе түсі */
+            --marmalade-pink: #FF8FAB;
+            --coffee-cream: #FFF5F5;
+            --latte-brown: #7B5E57;
             --white: #FFFFFF;
         }
 
@@ -23,7 +22,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Hero Section */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(255,143,171,0.2), rgba(0,0,0,0.4)), 
@@ -42,75 +40,45 @@
             font-family: 'Pacifico', cursive;
             font-size: clamp(45px, 12vw, 90px);
             margin: 0;
-            color: var(--white);
             text-shadow: 3px 3px 10px rgba(0,0,0,0.3);
         }
 
-        .hero p {
-            font-size: 1.3rem;
-            font-weight: 300;
-            letter-spacing: 2px;
-            margin-top: 15px;
+        /* Логотип стилі */
+        .main-logo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            object-fit: cover;
         }
 
-        /* Menu Section */
+        .footer-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
         .section { padding: 80px 20px; max-width: 900px; margin: auto; text-align: center; }
-        
         h2 { font-family: 'Pacifico', cursive; font-size: 2.5rem; margin-bottom: 40px; color: var(--marmalade-pink); }
-
-        .menu-list {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(255,143,171,0.1);
-        }
-
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px dashed var(--marmalade-pink);
-        }
-
+        .menu-list { background: var(--white); padding: 30px; border-radius: 30px; box-shadow: 0 15px 35px rgba(255,143,171,0.1); }
+        .menu-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px dashed var(--marmalade-pink); }
         .item-info { text-align: left; }
-        .item-info h3 { margin: 0; font-size: 1.1rem; }
-        .item-info p { margin: 5px 0 0; font-size: 0.9rem; opacity: 0.7; }
         .price { font-weight: bold; color: var(--marmalade-pink); font-size: 1.2rem; }
 
-        /* Contact Button */
-        .btn {
-            display: inline-block;
-            padding: 18px 45px;
-            background: var(--marmalade-pink);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            margin-top: 30px;
-            transition: 0.4s;
-            box-shadow: 0 10px 20px rgba(255,143,171,0.3);
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(255,143,171,0.4);
-        }
-
-        footer {
-            background: var(--latte-brown);
-            color: var(--white);
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
+        .btn { display: inline-block; padding: 18px 45px; background: var(--marmalade-pink); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; margin-top: 30px; transition: 0.4s; }
+        footer { background: var(--latte-brown); color: var(--white); padding: 40px 20px; text-align: center; margin-top: 50px; }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <h1 data-aos="zoom-in">Marmelatte</h1>
-        <p data-aos="fade-up">Астанадағы ең тәтті кофе сәттері</p>
+        <img src="Screenshot_20260429_003724_Instagram.jpg" alt="Marmelatte Logo" class="main-logo" data-aos="zoom-in">
+        <h1 data-aos="zoom-in" data-aos-delay="200">Marmelatte</h1>
+        <p data-aos="fade-up" data-aos-delay="400">Астанадағы ең тәтті кофе сәттері</p>
     </section>
 
     <section class="section">
@@ -152,10 +120,10 @@
     </section>
 
     <footer>
+        <img src="Screenshot_20260429_003724_Instagram.jpg" alt="Marmelatte Logo" class="footer-logo">
         <p>&copy; 2026 Marmelatte Coffee. Барлық құқықтар қорғалған.</p>
         <p style="opacity: 0.6; font-size: 12px;">Сайтты жасаған: Smart Digital</p>
     </footer>
-<img src="Screenshot_20260429_003724_Instagram.jpg" alt="Marmelatte Logo" style="width: 70px; border-radius: 50%; margin-bottom: 15px;">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
