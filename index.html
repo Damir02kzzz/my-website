@@ -1,133 +1,142 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marmelatte | Астанадағы ең тәтті кофе</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <title>ИП Юсупов — Сантехника и Сварка в Астане</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --marmalade-pink: #FF8FAB;
-            --coffee-cream: #FFF5F5;
-            --latte-brown: #7B5E57;
-            --white: #FFFFFF;
+            --blue: #0056b3;
+            --yellow: #ffcc00;
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
         }
-
         body {
+            font-family: 'Inter', sans-serif;
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--coffee-cream);
-            color: var(--latte-brown);
-            scroll-behavior: smooth;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
         }
-
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(255,143,171,0.2), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
+        header {
+            background: #fff;
+            padding: 15px 5%;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-weight: 700; font-size: 1.2rem; }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80'); /* Уақытша фон */
+            background-size: cover;
+            color: #fff;
+            padding: 60px 5%;
             text-align: center;
-            color: var(--white);
         }
-
-        .hero h1 {
-            font-family: 'Pacifico', cursive;
-            font-size: clamp(45px, 12vw, 90px);
-            margin: 0;
-            text-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+        .hero h1 { font-size: 2rem; margin-bottom: 15px; }
+        
+        /* Split Section */
+        .services { display: flex; flex-wrap: wrap; }
+        .service-box {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px 5%;
+            color: #fff;
         }
-
-        /* Логотип стилі */
-        .main-logo {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 3px solid white;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        .plumbing { background-color: var(--blue); }
+        .welding { background-color: var(--dark); border-left: 5px solid var(--yellow); }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .btn-wa { background-color: #25d366; color: #fff; }
+        
+        /* Gallery */
+        .gallery { padding: 40px 5%; text-align: center; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .grid img {
+            width: 100%;
+            height: 150px;
             object-fit: cover;
+            border-radius: 8px;
         }
 
-        .footer-logo {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            object-fit: cover;
+        footer { background: #333; color: #fff; padding: 30px 5%; text-align: center; }
+        
+        @media (max-width: 768px) {
+            .services { flex-direction: column; }
         }
-
-        .section { padding: 80px 20px; max-width: 900px; margin: auto; text-align: center; }
-        h2 { font-family: 'Pacifico', cursive; font-size: 2.5rem; margin-bottom: 40px; color: var(--marmalade-pink); }
-        .menu-list { background: var(--white); padding: 30px; border-radius: 30px; box-shadow: 0 15px 35px rgba(255,143,171,0.1); }
-        .menu-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px dashed var(--marmalade-pink); }
-        .item-info { text-align: left; }
-        .price { font-weight: bold; color: var(--marmalade-pink); font-size: 1.2rem; }
-
-        .btn { display: inline-block; padding: 18px 45px; background: var(--marmalade-pink); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; margin-top: 30px; transition: 0.4s; }
-        footer { background: var(--latte-brown); color: var(--white); padding: 40px 20px; text-align: center; margin-top: 50px; }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <img src="Screenshot_20260429_003724_Instagram.jpg" alt="Marmelatte Logo" class="main-logo" data-aos="zoom-in">
-        <h1 data-aos="zoom-in" data-aos-delay="200">Marmelatte</h1>
-        <p data-aos="fade-up" data-aos-delay="400">Астанадағы ең тәтті кофе сәттері</p>
-    </section>
+<header>
+    <div class="logo">ИП ЮСУПОВ / MASTER ASTANA</div>
+</header>
 
-    <section class="section">
-        <h2 data-aos="fade-up">Біздің мәзір</h2>
-        <div class="menu-list" data-aos="fade-up">
-            <div class="menu-item">
-                <div class="item-info">
-                    <h3>Marmelatte Special</h3>
-                    <p>Авторлық латте & мармелад</p>
-                </div>
-                <span class="price">1650 ₸</span>
-            </div>
-            <div class="menu-item">
-                <div class="item-info">
-                    <h3>Rose Latte</h3>
-                    <p>Нәзік раушан дәмімен</p>
-                </div>
-                <span class="price">1400 ₸</span>
-            </div>
-            <div class="menu-item">
-                <div class="item-info">
-                    <h3>Classic Cappuccino</h3>
-                    <p>Талғампаз классика</p>
-                </div>
-                <span class="price">1100 ₸</span>
-            </div>
+<section class="hero">
+    <h1>ПРОФЕССИОНАЛЬНЫЕ САНТЕХНИЧЕСКИЕ И СВАРОЧНЫЕ РАБОТЫ</h1>
+    <p>Собственный цех. Опыт более 10 лет. Гарантия качества в Астане.</p>
+</section>
+
+<section class="services">
+    <div class="service-box plumbing">
+        <h2>💧 Сантехника</h2>
+        <ul>
+            <li>Монтаж отопления (теплый пол)</li>
+            <li>Замена труб и канализации</li>
+            <li>Установка сантехприборов</li>
+        </ul>
+        <p>Мастер Ербол: 8 775 351 53 55</p>
+        <a href="https://wa.me/77753515355?text=Здравствуйте!%20Мне%20нужна%20консультация%20по%20сантехнике" class="btn btn-wa">Написать в WhatsApp</a>
+    </div>
+    
+    <div class="service-box welding">
+        <h2>🔥 Сварка</h2>
+        <ul>
+            <li>Навесы, ворота, ограждения</li>
+            <li>Металлоконструкции в цеху</li>
+            <li>Сварка труб любой сложности</li>
+        </ul>
+        <p>Мастер Сакен: 8 778 802 67 92</p>
+        <a href="https://wa.me/77788026792?text=Здравствуйте!%20Мне%20нужны%20сварочные%20работы" class="btn btn-wa">Написать в WhatsApp</a>
+    </div>
+</section>
+
+<section class="gallery">
+    <h2>Наши работы</h2>
+    <p>Больше в Instagram: <a href="https://instagram.com/svarka.astana.2025" target="_blank">@svarka.astana.2025</a></p>
+    <div class="grid">
+        <img src="img1.jpg" alt="Работа 1">
+        <img src="img2.jpg" alt="Работа 2">
+        <img src="img3.jpg" alt="Работа 3">
+        <img src="img4.jpg" alt="Работа 4">
         </div>
-    </section>
+</section>
 
-    <section class="section" data-aos="fade-up">
-        <h2>Бізге келіңіз</h2>
-        <p>Астана қ., @marmelatte_ast</p>
-        <p>Жұмыс уақыты: 09:00 - 21:00</p>
-        <a href="https://2gis.kz" class="btn">📍 КАРТАДАН КӨРУ</a>
-        <br><br>
-        <a href="https://instagram.com/marmelatte_ast" target="_blank" style="color: var(--marmalade-pink); text-decoration: none; font-weight: bold;">
-            Instagram: @marmelatte_ast
-        </a>
-    </section>
+<footer>
+    <p><strong>Адрес:</strong> г. Астана, ул. Кокарал, 1 (Цех)</p>
+    <p>Режим работы: 09:00 - 21:00</p>
+    <p>© 2026 ИП Юсупов. Все права защищены.</p>
+</footer>
 
-    <footer>
-        <img src="Screenshot_20260429_003724_Instagram.jpg" alt="Marmelatte Logo" class="footer-logo">
-        <p>&copy; 2026 Marmelatte Coffee. Барлық құқықтар қорғалған.</p>
-        <p style="opacity: 0.6; font-size: 12px;">Сайтты жасаған: Smart Digital</p>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1200, once: true });
-    </script>
 </body>
 </html>
