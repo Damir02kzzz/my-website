@@ -3,96 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MASTER ASTANA — Профессиональная Сантехника и Сварка в Астане</title>
+    <title>MASTER ASTANA — Инженерные системы и Металлоконструкции</title>
     <style>
-        :root { --blue: #0056b3; --dark: #1a1a1a; --yellow: #ffcc00; --light: #f4f4f4; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; background: var(--light); color: #333; line-height: 1.6; }
-        header { background: #fff; padding: 20px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); font-weight: bold; font-size: 1.6rem; color: var(--dark); }
+        :root { --blue: #007bff; --dark: #0f0f0f; --yellow: #ffc107; --white: #ffffff; }
+        body { font-family: 'Poppins', 'Segoe UI', sans-serif; margin: 0; background: #000; color: var(--white); line-height: 1.6; }
         
-        .hero { background: var(--dark); color: #fff; padding: 60px 10%; text-align: center; border-bottom: 5px solid var(--yellow); }
-        .hero h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
-        .hero p { color: var(--yellow); font-size: 1.3rem; margin-top: 15px; font-weight: 500; }
-        .hero .desc { color: #ccc; font-size: 1.1rem; max-width: 850px; margin: 20px auto; }
+        /* Header & Hero Area */
+        header { background: rgba(0,0,0,0.9); padding: 25px; text-align: center; border-bottom: 2px solid var(--yellow); }
+        .logo { font-size: 2rem; font-weight: 900; letter-spacing: 3px; color: var(--white); }
+        .logo span { color: var(--yellow); }
 
-        .services { display: flex; flex-wrap: wrap; }
-        .box { flex: 1; min-width: 350px; padding: 40px 5%; color: #fff; }
-        .plumb { background: var(--blue); }
-        .weld { background: var(--dark); border-left: 1px solid rgba(255,255,255,0.1); }
-
-        h2 { font-size: 2rem; border-bottom: 3px solid var(--yellow); padding-bottom: 10px; margin-bottom: 25px; text-align: center; }
-        h3 { color: var(--yellow); margin-top: 30px; font-size: 1.4rem; text-transform: uppercase; }
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; background-position: center; padding: 100px 10%; text-align: center;
+        }
+        .hero h1 { font-size: 3rem; margin: 0; text-transform: uppercase; }
+        .hero p { font-size: 1.4rem; color: var(--yellow); margin: 20px 0; font-weight: bold; }
         
-        .content-text { font-size: 1.05rem; margin-bottom: 20px; text-align: justify; opacity: 0.9; }
-        .service-list { list-style: none; padding: 0; margin: 20px 0; }
-        .service-list li { margin-bottom: 12px; padding-left: 30px; position: relative; font-size: 1.05rem; }
-        .service-list li::before { content: "✔"; position: absolute; left: 0; color: var(--yellow); font-weight: bold; }
-
-        .btn-wa { display: inline-block; width: 100%; text-align: center; padding: 20px; background: #25d366; color: white; text-decoration: none; border-radius: 10px; margin: 30px 0; font-weight: bold; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s; }
-        .btn-wa:hover { transform: translateY(-3px); background: #1ebe57; }
-
-        .guarantee-block { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 30px; border: 1px dashed var(--yellow); }
+        /* Services Section */
+        .container { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; }
+        .card { 
+            flex: 1; min-width: 350px; background: #1a1a1a; border-radius: 15px; overflow: hidden; 
+            border: 1px solid #333; transition: 0.4s; position: relative;
+        }
+        .card:hover { border-color: var(--yellow); transform: translateY(-10px); }
+        .card-header { padding: 40px; text-align: center; }
+        .plumb-header { background: linear-gradient(135deg, #004e92, #000428); }
+        .weld-header { background: linear-gradient(135deg, #434343, #000000); border-bottom: 3px solid var(--yellow); }
         
-        footer { background: #111; color: #aaa; padding: 50px 10%; text-align: center; }
-        .footer-info { margin-bottom: 25px; font-size: 1.1rem; line-height: 1.8; }
-        .inst { color: var(--yellow); text-decoration: none; font-weight: bold; font-size: 1.2rem; }
+        .card h2 { font-size: 2.2rem; margin: 0; text-transform: uppercase; }
+        .card-body { padding: 30px; }
+        .card-body h3 { color: var(--yellow); text-transform: uppercase; font-size: 1.1rem; }
+        .list { list-style: none; padding: 0; }
+        .list li { padding: 10px 0; border-bottom: 1px solid #222; position: relative; padding-left: 25px; }
+        .list li::before { content: "⚡"; position: absolute; left: 0; color: var(--yellow); }
+
+        /* Buttons */
+        .btn-wa { 
+            display: block; text-align: center; padding: 20px; background: #25d366; color: white; 
+            text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 1.3rem; 
+            margin-top: 30px; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Instagram Section */
+        .instagram-block { 
+            background: #fff; color: #000; padding: 40px 10%; text-align: center; margin: 50px 0; 
+            border-radius: 20px; margin: 40px 20px;
+        }
+        .inst-btn { 
+            display: inline-block; padding: 15px 30px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+            color: white; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px;
+        }
+
+        /* Footer & Address */
+        footer { background: #0a0a0a; padding: 60px 10%; text-align: center; border-top: 1px solid #333; }
+        .address-link { 
+            color: var(--yellow); text-decoration: none; font-size: 1.5rem; font-weight: bold; 
+            display: inline-block; border: 2px solid var(--yellow); padding: 15px 30px; border-radius: 10px; margin-top: 20px;
+        }
+        .address-link:hover { background: var(--yellow); color: #000; }
     </style>
 </head>
 <body>
 
-<header>MASTER ASTANA</header>
+<header>
+    <div class="logo">MASTER <span>ASTANA</span></div>
+</header>
 
 <section class="hero">
-    <h1>Профессиональные инженерные решения</h1>
-    <p>⚡️ Более 15 лет опыта • Гарантия качества • г. Астана</p>
-    <div class="desc">Мы специализируемся на изготовлении сложных металлоконструкций и монтаже современных систем сантехники в Астане и пригороде. Ответственный подход и профессионализм в каждой детали.</div>
+    <h1>Экспертный уровень работ</h1>
+    <p>Монтаж инженерных систем и металлоконструкций любой сложности</p>
+    <div style="color: #ccc; max-width: 700px; margin: 0 auto;">Более 15 лет на рынке Астаны. Гарантируем надежность, соблюдение ГОСТ и долговечность каждого проекта.</div>
 </section>
 
-<section class="services">
-    <div class="box plumb">
-        <h2>💧 УСЛУГИ САНТЕХНИКА</h2>
-        <p class="content-text">Мастер Ербол — эксперт по монтажу отопительных и водопроводных систем любой сложности. Мы создаем комфорт в вашем доме, используя только проверенные материалы и современное оборудование.</p>
-        
-        <h3>Что мы предлагаем:</h3>
-        <ul class="service-list">
-            <li><strong>Системы отопления:</strong> Монтаж котлов всех видов, установка радиаторов и сборка тепловых узлов.</li>
-            <li><strong>Теплый пол:</strong> Укладка энергоэффективных систем напольного отопления с гарантией равномерного прогрева.</li>
-            <li><strong>Водопровод и канализация:</strong> Разводка труб, установка систем фильтрации и полная сборка септиков.</li>
-            <li><strong>Санфаянс:</strong> Установка инсталляций, унитазов, ванн, смесителей и душевых кабин «под ключ».</li>
-        </ul>
-
-        <div class="guarantee-block">
-            📢 <strong>Совет от Ербола:</strong> Качественная сантехника сегодня — это отсутствие проблем и лишних затрат завтра. Доверяйте профессионалам!
+<div class="container">
+    <div class="card">
+        <div class="card-header plumb-header">
+            <h2>Сантехника</h2>
+            <div style="font-size: 1.2rem; margin-top: 10px; opacity: 0.8;">Мастер Ербол</div>
         </div>
-
-        <a href="https://wa.me/77753515355" class="btn-wa">Написать Ерболу в WhatsApp</a>
+        <div class="card-body">
+            <h3>Перечень услуг:</h3>
+            <ul class="list">
+                <li>Проектирование и монтаж систем отопления</li>
+                <li>Укладка теплых полов под ключ</li>
+                <li>Обвязка котельных и установка бойлеров</li>
+                <li>Прокладка труб водоснабжения и канализации</li>
+                <li>Установка элитной сантехники и инсталляций</li>
+            </ul>
+            <a href="https://wa.me/77753515355?text=Здравствуйте!%20Я%20по%20поводу%20сантехнических%20работ.%20Нужна%20консультация." class="btn-wa">Связаться с мастером</a>
+        </div>
     </div>
 
-    <div class="box weld">
-        <h2>🔥 СВАРОЧНЫЕ РАБОТЫ</h2>
-        <p class="content-text">Наш цех выполняет полный спектр сварочных работ по изготовлению металлоизделий. Мы сочетаем прочность конструкций с эстетичным внешним видом. Гарантируем надежность на десятилетия.</p>
-        
-        <h3>Наши услуги:</h3>
-        <ul class="service-list">
-            <li><strong>Металлокаркасы:</strong> Строительство ангаров, складов, торговых павильонов и офисных оснований.</li>
-            <li><strong>Наружные конструкции:</strong> Сложные навесы, современные заборы, ворота всех типов и лестницы.</li>
-            <li><strong>Сварка труб:</strong> Работа с трубопроводами высокого давления, пожарными системами и газификацией.</li>
-            <li><strong>Изделия в стиле Loft:</strong> Прочная и стильная мебель, стеллажи и декоративные элементы для интерьера.</li>
-        </ul>
-
-        <div class="guarantee-block">
-            🛠 <strong>Гарантия от Сакена:</strong> Наши сварочные швы выдерживают любые нагрузки. Мы отвечаем за прочность каждого стыка!
+    <div class="card">
+        <div class="card-header weld-header">
+            <h2>Сварка</h2>
+            <div style="font-size: 1.2rem; margin-top: 10px; color: var(--yellow);">Сварочный цех</div>
         </div>
-
-        <a href="https://wa.me/77088815092" class="btn-wa">Написать Сакену в WhatsApp</a>
+        <div class="card-body">
+            <h3>Что мы изготавливаем:</h3>
+            <ul class="list">
+                <li>Строительство ангаров и пром-объектов</li>
+                <li>Сложные навесы, ворота и ограждения</li>
+                <li>Сварка магистральных трубопроводов</li>
+                <li>Металлокаркасы для бизнеса и Loft мебели</li>
+                <li>Профессиональный ремонт металлоизделий</li>
+            </ul>
+            <a href="https://wa.me/77088815092?text=Здравствуйте!%20Я%20по%20поводу%20сварочных%20работ.%20Хочу%20сделать%20заказ." class="btn-wa">Связаться со сварщиком</a>
+        </div>
     </div>
+</div>
+
+<section class="instagram-block">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" width="60" alt="Insta">
+    <h2 style="font-size: 2rem; margin: 15px 0;">Наше портфолио в Instagram</h2>
+    <p>Смотрите живые примеры наших работ, видео процесса и отзывы клиентов</p>
+    <a href="https://instagram.com/svarka.astana.2025" class="inst-btn">@svarka.astana.2025</a>
 </section>
 
 <footer>
-    <div class="footer-info">
-        <strong>Наш адрес:</strong> г. Астана, ул. Көкарал, 1 (Цех)<br>
-        <strong>Instagram:</strong> <a href="https://instagram.com/svarka.astana.2025" class="inst">@svarka.astana.2025</a>
-    </div>
-    <p>© 2026 MASTER ASTANA — Профессиональный союз мастеров. На все виды работ предоставляется официальная гарантия.</p>
+    <h2 style="color: var(--white);">Наш адрес в Астане:</h2>
+    <a href="https://2gis.kz/astana/search/Кокарал%201" target="_blank" class="address-link">📍 ул. Көкарал, 1 (Цех)</a>
+    <p style="margin-top: 30px; opacity: 0.6;">© 2026 MASTER ASTANA — Качество проверенное годами.</p>
 </footer>
 
 </body>
