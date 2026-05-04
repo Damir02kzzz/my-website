@@ -4,85 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ИП Юсупов — Сантехника и Сварка в Астане</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --blue: #0056b3;
             --yellow: #ffcc00;
             --dark: #1a1a1a;
             --light: #f4f4f4;
+            --white: #ffffff;
         }
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light);
-            color: var(--dark);
-        }
-        header {
-            background: #fff;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo { font-weight: 700; font-size: 1.1rem; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
+        header { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); sticky; top: 0; z-index: 1000; }
+        .logo { font-weight: bold; font-size: 1.2rem; color: var(--dark); }
         
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('IMG-20260503-WA0010.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 50px 5%;
-            text-align: center;
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/1000460633.jpg'); 
+            background-size: cover; background-position: center; 
+            color: var(--white); padding: 80px 5%; text-align: center; 
         }
-        .hero h1 { font-size: 1.8rem; margin-bottom: 10px; }
-        
-        .services { display: flex; flex-wrap: wrap; }
-        .service-box {
-            flex: 1;
-            min-width: 300px;
-            padding: 30px 5%;
-            color: #fff;
-        }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+
+        .services { display: flex; flex-wrap: wrap; gap: 0; }
+        .service-box { flex: 1; min-width: 350px; padding: 40px 5%; color: var(--white); }
         .plumbing { background-color: var(--blue); }
         .welding { background-color: var(--dark); border-left: 5px solid var(--yellow); }
         
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 700;
-            margin-top: 15px;
-            transition: 0.3s;
-        }
-        .btn-wa { background-color: #25d366; color: #fff; }
-        
-        .gallery { padding: 40px 5%; text-align: center; }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 10px;
-            margin: 20px 0;
-        }
-        .grid img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 2px solid #ddd;
-        }
+        h2 { font-size: 1.8rem; margin-bottom: 20px; }
+        ul { padding-left: 20px; margin-bottom: 30px; }
+        li { margin-bottom: 10px; }
 
-        footer { background: #333; color: #fff; padding: 30px 5%; text-align: center; }
-        .contact-info { margin-bottom: 20px; font-size: 0.9rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 25px; }
+        .grid img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid rgba(255,255,255,0.2); }
+
+        .btn-wa { 
+            display: inline-block; padding: 15px 30px; background-color: #25d366; 
+            color: white; text-decoration: none; border-radius: 5px; 
+            font-weight: bold; transition: 0.3s; margin-top: 20px; 
+        }
+        .btn-wa:hover { transform: scale(1.05); }
+
+        .features { padding: 50px 5%; background: var(--white); text-align: center; }
+        .feature-item { display: inline-block; width: 250px; margin: 20px; vertical-align: top; }
+
+        footer { background: #222; color: #ccc; padding: 40px 5%; text-align: center; }
+        .contact-info { margin-bottom: 20px; }
         
         @media (max-width: 768px) {
-            .services { flex-direction: column; }
+            .hero h1 { font-size: 1.6rem; }
+            .service-box { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -93,61 +62,76 @@
 </header>
 
 <section class="hero">
-    <h1>ПРОФЕССИОНАЛЬНАЯ САНТЕХНИКА И СВАРКА</h1>
-    <p>Цех на Кокарал 1. Гарантия качества. Опыт 10+ лет.</p>
+    <h1>Профессиональные инженерные системы и металлоконструкции</h1>
+    <p>Монтаж отопления, котельных и производство металлоконструкций любой сложности в Астане. Опыт более 10 лет.</p>
+</section>
+
+<section class="features">
+    <h2>Почему выбирают нас?</h2>
+    <div class="feature-item">
+        <h3>Опыт 10+ лет</h3>
+        <p>Каждый мастер — профессионал своего дела с огромным стажем.</p>
+    </div>
+    <div class="feature-item">
+        <h3>Гарантия качества</h3>
+        <p>Мы несем полную ответственность за выполненную работу.</p>
+    </div>
+    <div class="feature-item">
+        <h3>Сроки</h3>
+        <p>Работаем оперативно, соблюдая оговоренные дедлайны.</p>
+    </div>
 </section>
 
 <section class="services">
     <div class="service-box plumbing">
-        <h2>💧 Сантехника (Ербол)</h2>
+        <h2>💧 Сантехника и Отопление</h2>
         <ul>
-            <li>Монтаж отопления и теплых полов</li>
-            <li>Замена труб и канализации</li>
-            <li>Установка радиаторов и сантехники</li>
+            <li>Монтаж систем отопления и теплых полов</li>
+            <li>Установка и обвязка котельных (Buderus и др.)</li>
+            <li>Сборка сложных узлов ввода и фильтрации</li>
+            <li>Прокладка водопровода и канализации</li>
+            <li>Установка сантехники и инсталляций</li>
         </ul>
-        <p>Тел: +7 775 351 53 55</p>
-        <a href="https://wa.me/77753515355?text=Здравствуйте!%20Мне%20нужна%20консультация%20по%20сантехнике" class="btn btn-wa">Написать Ерболу</a>
+        <p><strong>Мастер Ербол:</strong> +7 775 351 53 55</p>
+        <a href="https://wa.me/77753515355" class="btn-wa">Написать в WhatsApp</a>
         
         <div class="grid">
-            <img src="IMG-20260503-WA0014.jpg">
-            <img src="IMG-20260503-WA0015.jpg">
-            <img src="IMG-20260503-WA0016.jpg">
-            <img src="IMG-20260503-WA0017.jpg">
-            <img src="IMG-20260503-WA0018.jpg">
+            <img src="img/1000461041.jpg" alt="Узел ввода">
+            <img src="img/1000461042.jpg" alt="Котельная">
+            <img src="img/1000460603.jpg" alt="Коллектор">
+            <img src="img/1000460614.jpg" alt="Теплый пол">
+            <img src="img/1000461040.jpg" alt="Монтаж">
         </div>
     </div>
     
     <div class="service-box welding">
-        <h2>🔥 Сварка (Сакен)</h2>
+        <h2>🔥 Сварочные работы</h2>
         <ul>
-            <li>Навесы, ворота, заборы</li>
-            <li>Металлоконструкции любой сложности</li>
-            <li>Сварка труб в цеху и на выезд</li>
+            <li>Металлоконструкции (Ангары, магазины, склады)</li>
+            <li>Изготовление навесов, ворот и ограждений</li>
+            <li>Беседки, качели и садовые конструкции</li>
+            <li>Сварка труб и сложных узлов</li>
+            <li>Лофт-конструкции любой сложности</li>
         </ul>
-        <p>Тел: +7 778 802 67 92</p>
-        <a href="https://wa.me/77788026792?text=Здравствуйте!%20Мне%20нужны%20сварочные%20работы" class="btn btn-wa">Написать Сакену</a>
+        <p><strong>Мастер Сакен:</strong> +7 778 802 67 92</p>
+        <a href="https://wa.me/77788026792" class="btn-wa">Написать в WhatsApp</a>
         
         <div class="grid">
-            <img src="IMG-20260503-WA0021.jpg">
-            <img src="IMG-20260503-WA0022.jpg">
-            <img src="IMG-20260503-WA0023.jpg">
-            <img src="IMG-20260503-WA0024.jpg">
-            <img src="IMG-20260503-WA0025.jpg">
+            <img src="img/1000461039.jpg" alt="Каркас">
+            <img src="img/1000460630.jpg" alt="Балкон">
+            <img src="img/1000460639.jpg" alt="Беседка">
+            <img src="img/1000460636.jpg" alt="Качели">
+            <img src="img/1000460632.jpg" alt="Ангар">
         </div>
     </div>
 </section>
 
-<section class="gallery">
-    <h2>Наши выполненные работы</h2>
-    <p>Больше фото в Instagram: <a href="https://instagram.com/svarka.astana.2025" target="_blank">@svarka.astana.2025</a></p>
-</section>
-
 <footer>
     <div class="contact-info">
-        <p><strong>Адрес:</strong> г. Астана, ул. Кокарал, 1 (Цех)</p>
-        <p><strong>Режим работы:</strong> 09:00 - 21:00</p>
+        <p><strong>Адрес цеха:</strong> г. Астана, ул. Көкарал, 1</p>
+        <p><strong>Instagram:</strong> @svarka.astana.2025</p>
     </div>
-    <p>© 2026 ИП Юсупов. Все права защищены.</p>
+    <p>© 2026 ИП Юсупов. Все права защищены. Работаем на совесть.</p>
 </footer>
 
 </body>
