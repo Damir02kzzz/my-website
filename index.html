@@ -3,128 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MASTER ASTANA — Инженерные системы и Металлоконструкции</title>
+    <title>MASTER ASTANA — ИП ЮСУПОВ | Сантехника и Сварка в Астане</title>
     <style>
-        :root { --blue: #007bff; --dark: #0f0f0f; --yellow: #ffc107; --white: #ffffff; }
-        body { font-family: 'Poppins', 'Segoe UI', sans-serif; margin: 0; background: #000; color: var(--white); line-height: 1.6; }
+        :root { --blue: #007bff; --dark: #0f0f0f; --yellow: #ffc107; --white: #ffffff; --gray: #b0b0b0; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; background: #000; color: var(--white); line-height: 1.6; }
         
-        /* Header & Hero Area */
-        header { background: rgba(0,0,0,0.9); padding: 25px; text-align: center; border-bottom: 2px solid var(--yellow); }
-        .logo { font-size: 2rem; font-weight: 900; letter-spacing: 3px; color: var(--white); }
+        /* Header */
+        header { background: rgba(0,0,0,0.95); padding: 20px; text-align: center; border-bottom: 3px solid var(--yellow); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.8rem; font-weight: 900; letter-spacing: 2px; }
         .logo span { color: var(--yellow); }
+        .owner { font-size: 0.9rem; color: var(--gray); text-transform: uppercase; letter-spacing: 3px; margin-top: 5px; }
 
+        /* Hero Section */
         .hero { 
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover; background-position: center; padding: 100px 10%; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; background-position: center; padding: 80px 10%; text-align: center;
         }
-        .hero h1 { font-size: 3rem; margin: 0; text-transform: uppercase; }
-        .hero p { font-size: 1.4rem; color: var(--yellow); margin: 20px 0; font-weight: bold; }
+        .hero h1 { font-size: 2.5rem; margin: 0; text-transform: uppercase; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; color: var(--yellow); margin: 20px 0; font-weight: 600; }
         
         /* Services Section */
-        .container { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; }
-        .card { 
-            flex: 1; min-width: 350px; background: #1a1a1a; border-radius: 15px; overflow: hidden; 
-            border: 1px solid #333; transition: 0.4s; position: relative;
+        .main-container { max-width: 1300px; margin: 0 auto; padding: 40px 20px; }
+        .services-wrapper { display: flex; flex-wrap: wrap; gap: 30px; }
+        .service-card { 
+            flex: 1; min-width: 380px; background: #151515; border-radius: 20px; overflow: hidden; 
+            border: 1px solid #252525; transition: 0.3s;
         }
-        .card:hover { border-color: var(--yellow); transform: translateY(-10px); }
-        .card-header { padding: 40px; text-align: center; }
-        .plumb-header { background: linear-gradient(135deg, #004e92, #000428); }
-        .weld-header { background: linear-gradient(135deg, #434343, #000000); border-bottom: 3px solid var(--yellow); }
+        .service-card:hover { border-color: var(--yellow); box-shadow: 0 10px 30px rgba(255,193,7,0.1); }
         
-        .card h2 { font-size: 2.2rem; margin: 0; text-transform: uppercase; }
-        .card-body { padding: 30px; }
-        .card-body h3 { color: var(--yellow); text-transform: uppercase; font-size: 1.1rem; }
-        .list { list-style: none; padding: 0; }
-        .list li { padding: 10px 0; border-bottom: 1px solid #222; position: relative; padding-left: 25px; }
-        .list li::before { content: "⚡"; position: absolute; left: 0; color: var(--yellow); }
+        .card-header { padding: 40px 30px; text-align: center; }
+        .plumb-bg { background: linear-gradient(135deg, #004e92, #000428); }
+        .weld-bg { background: linear-gradient(135deg, #333, #000); border-bottom: 2px solid var(--yellow); }
+        
+        .card-body { padding: 35px; }
+        h2 { font-size: 2rem; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+        h3 { color: var(--yellow); border-left: 4px solid var(--yellow); padding-left: 15px; margin: 25px 0 15px; font-size: 1.2rem; }
+        
+        .text-content { color: #d0d0d0; font-size: 1rem; margin-bottom: 20px; text-align: justify; }
+        .service-list { list-style: none; padding: 0; }
+        .service-list li { padding: 8px 0; border-bottom: 1px solid #222; position: relative; padding-left: 30px; color: #eee; }
+        .service-list li::before { content: "✓"; position: absolute; left: 0; color: var(--yellow); font-weight: bold; }
 
-        /* Buttons */
+        /* Master's Advice Block */
+        .advice-box { background: rgba(255,193,7,0.05); border: 1px dashed var(--yellow); padding: 20px; border-radius: 12px; margin: 25px 0; position: relative; }
+        .advice-box i { display: block; font-weight: bold; color: var(--yellow); margin-bottom: 8px; }
+
         .btn-wa { 
-            display: block; text-align: center; padding: 20px; background: #25d366; color: white; 
-            text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 1.3rem; 
-            margin-top: 30px; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            display: block; text-align: center; padding: 22px; background: #25d366; color: white; 
+            text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 1.2rem; 
+            margin-top: 30px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); transition: 0.3s;
         }
+        .btn-wa:hover { background: #1ebe57; transform: scale(1.02); }
 
         /* Instagram Section */
-        .instagram-block { 
-            background: #fff; color: #000; padding: 40px 10%; text-align: center; margin: 50px 0; 
-            border-radius: 20px; margin: 40px 20px;
+        .instagram-section { 
+            background: #fff; color: #000; padding: 60px 10%; text-align: center; 
+            border-radius: 30px; margin: 60px 20px;
         }
         .inst-btn { 
-            display: inline-block; padding: 15px 30px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
-            color: white; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px;
+            display: inline-block; padding: 18px 40px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+            color: white; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 25px;
         }
 
-        /* Footer & Address */
-        footer { background: #0a0a0a; padding: 60px 10%; text-align: center; border-top: 1px solid #333; }
-        .address-link { 
-            color: var(--yellow); text-decoration: none; font-size: 1.5rem; font-weight: bold; 
-            display: inline-block; border: 2px solid var(--yellow); padding: 15px 30px; border-radius: 10px; margin-top: 20px;
+        /* Footer */
+        footer { background: #0a0a0a; padding: 60px 10%; text-align: center; border-top: 1px solid #222; }
+        .address-btn { 
+            color: var(--yellow); text-decoration: none; font-size: 1.4rem; font-weight: bold; 
+            display: inline-block; border: 2px solid var(--yellow); padding: 15px 35px; border-radius: 12px; margin: 20px 0;
         }
-        .address-link:hover { background: var(--yellow); color: #000; }
+        .address-btn:hover { background: var(--yellow); color: #000; }
     </style>
 </head>
 <body>
 
 <header>
     <div class="logo">MASTER <span>ASTANA</span></div>
+    <div class="owner">ИП ЮСУПОВ</div>
 </header>
 
 <section class="hero">
-    <h1>Экспертный уровень работ</h1>
-    <p>Монтаж инженерных систем и металлоконструкций любой сложности</p>
-    <div style="color: #ccc; max-width: 700px; margin: 0 auto;">Более 15 лет на рынке Астаны. Гарантируем надежность, соблюдение ГОСТ и долговечность каждого проекта.</div>
+    <h1>Профессиональные инженерные решения в Астане</h1>
+    <p>⚡️ Свыше 15 лет безупречной работы и сотни реализованных проектов</p>
+    <div style="color: #bbb; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+        Мы объединили лучших специалистов города, чтобы предоставить вам полный цикл услуг: от монтажа сложнейших отопительных систем до возведения масштабных металлоконструкций. Наша работа — это ваша безопасность и комфорт.
+    </div>
 </section>
 
-<div class="container">
-    <div class="card">
-        <div class="card-header plumb-header">
-            <h2>Сантехника</h2>
-            <div style="font-size: 1.2rem; margin-top: 10px; opacity: 0.8;">Мастер Ербол</div>
-        </div>
-        <div class="card-body">
-            <h3>Перечень услуг:</h3>
-            <ul class="list">
-                <li>Проектирование и монтаж систем отопления</li>
-                <li>Укладка теплых полов под ключ</li>
-                <li>Обвязка котельных и установка бойлеров</li>
-                <li>Прокладка труб водоснабжения и канализации</li>
-                <li>Установка элитной сантехники и инсталляций</li>
-            </ul>
-            <a href="https://wa.me/77753515355?text=Здравствуйте!%20Я%20по%20поводу%20сантехнических%20работ.%20Нужна%20консультация." class="btn-wa">Связаться с мастером</a>
-        </div>
-    </div>
+<div class="main-container">
+    <div class="services-wrapper">
+        
+        <div class="service-card">
+            <div class="card-header plumb-bg">
+                <h2>Сантехника</h2>
+                <div style="font-size: 1.1rem; margin-top: 10px; color: #ffcc00;">Мастер: Ербол</div>
+            </div>
+            <div class="card-body">
+                <div class="text-content">
+                    Качественная сантехника — это фундамент уюта. Мы выполняем проектирование и монтаж систем любой сложности: от элитных коттеджей до коммерческих помещений. Используем только передовые технологии обвязки и европейские материалы.
+                </div>
+                
+                <h3>Весь спектр услуг:</h3>
+                <ul class="service-list">
+                    <li>Монтаж систем автономного отопления (Котлы, ТЭНы)</li>
+                    <li>Установка и настройка "Умного" теплого пола</li>
+                    <li>Замена стояков, водопровода и канализации (пластик/металл)</li>
+                    <li>Установка чистовой сантехники, бойлеров и насосов</li>
+                    <li>Аварийное устранение протечек и ремонт систем</li>
+                </ul>
 
-    <div class="card">
-        <div class="card-header weld-header">
-            <h2>Сварка</h2>
-            <div style="font-size: 1.2rem; margin-top: 10px; color: var(--yellow);">Сварочный цех</div>
+                <div class="advice-box">
+                    <i>💡 Совет от Ербола:</i>
+                    "При монтаже отопления никогда не экономьте на коллекторной группе и насосах. Качественная автоматика окупает себя за одну зиму за счет экономии энергии."
+                </div>
+
+                <a href="https://wa.me/77753515355?text=Здравствуйте,%20Ербол!%20Пишу%20вам%20с%20вашего%20сайта.%20Нужна%20консультация%20по%20сантехнике." class="btn-wa">Написать Ерболу</a>
+            </div>
         </div>
-        <div class="card-body">
-            <h3>Что мы изготавливаем:</h3>
-            <ul class="list">
-                <li>Строительство ангаров и пром-объектов</li>
-                <li>Сложные навесы, ворота и ограждения</li>
-                <li>Сварка магистральных трубопроводов</li>
-                <li>Металлокаркасы для бизнеса и Loft мебели</li>
-                <li>Профессиональный ремонт металлоизделий</li>
-            </ul>
-            <a href="https://wa.me/77088815092?text=Здравствуйте!%20Я%20по%20поводу%20сварочных%20работ.%20Хочу%20сделать%20заказ." class="btn-wa">Связаться со сварщиком</a>
+
+        <div class="service-card">
+            <div class="card-header weld-bg">
+                <h2>Сварка</h2>
+                <div style="font-size: 1.1rem; margin-top: 10px; color: var(--yellow);">Мастер: Сакен</div>
+            </div>
+            <div class="card-body">
+                <div class="text-content">
+                    Металл требует точности и опыта. Наш цех специализируется на изготовлении конструкций, способных выдержать суровый климат Астаны. Мы гарантируем прочность каждого шва и эстетичный вид готовых изделий.
+                </div>
+                
+                <h3>Направления работ:</h3>
+                <ul class="service-list">
+                    <li>Строительство ангаров, складов и торговых павильонов</li>
+                    <li>Изготовление навесов, заборов, ворот и решеток</li>
+                    <li>Профессиональная сварка труб под высоким давлением</li>
+                    <li>Металлоконструкции в стиле Loft для интерьеров</li>
+                    <li>Монтаж лестниц, перила и входных групп</li>
+                </ul>
+
+                <div class="advice-box">
+                    <i>🛠 Совет от Сакена:</i>
+                    "Для наружных конструкций в нашем регионе выбирайте только порошковую покраску или качественную антикоррозийную грунтовку — это защитит металл от ржавчины на 10-15 лет."
+                </div>
+
+                <a href="https://wa.me/77788026792?text=Здравствуйте,%20Сакен!%20Пишу%20вам%20с%20вашего%20сайта.%20Нужен%20расчет%20по%20сварочным%20работам." class="btn-wa">Написать Сакену</a>
+            </div>
         </div>
+
     </div>
 </div>
 
-<section class="instagram-block">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" width="60" alt="Insta">
-    <h2 style="font-size: 2rem; margin: 15px 0;">Наше портфолио в Instagram</h2>
-    <p>Смотрите живые примеры наших работ, видео процесса и отзывы клиентов</p>
-    <a href="https://instagram.com/svarka.astana.2025" class="inst-btn">@svarka.astana.2025</a>
+<section class="instagram-section">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" width="60" alt="Instagram">
+    <h2 style="font-size: 2.2rem; margin: 15px 0;">Следите за нами в Instagram</h2>
+    <p>Ежедневные отчеты с объектов, процесс сварки и монтажа систем в реальном времени</p>
+    <a href="https://instagram.com/svarka.astana.2025" target="_blank" class="inst-btn">@svarka.astana.2025</a>
 </section>
 
 <footer>
-    <h2 style="color: var(--white);">Наш адрес в Астане:</h2>
-    <a href="https://2gis.kz/astana/search/Кокарал%201" target="_blank" class="address-link">📍 ул. Көкарал, 1 (Цех)</a>
-    <p style="margin-top: 30px; opacity: 0.6;">© 2026 MASTER ASTANA — Качество проверенное годами.</p>
+    <h2 style="color: #fff; margin-bottom: 10px;">Наш адрес в Астане:</h2>
+    <a href="https://2gis.kz/astana/search/Кокарал%201" target="_blank" class="address-btn">📍 ул. Көкарал, 1 (Цех)</a>
+    <div style="margin-top: 40px; color: #555;">
+        <p>ИП ЮСУПОВ | БИН 850304300645</p>
+        <p>© 2026 MASTER ASTANA. Работаем на совесть!</p>
+    </div>
 </footer>
 
 </body>
