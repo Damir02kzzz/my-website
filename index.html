@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ИП Юсупов — Сантехника и Сварка в Астане</title>
     <style>
-        :root { --blue: #0056b3; --yellow: #ffcc00; --dark: #1a1a1a; --light: #f4f4f4; }
-        body { font-family: sans-serif; margin: 0; padding: 0; background: var(--light); }
-        header { background: #fff; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); font-weight: bold; }
+        :root { --blue: #0056b3; --dark: #1a1a1a; --yellow: #ffcc00; --light: #f4f4f4; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; background: var(--light); color: #333; }
+        header { background: #fff; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); font-weight: bold; font-size: 1.2rem; }
         .hero { background: var(--dark); color: #fff; padding: 30px 5%; text-align: center; }
         .services { display: flex; flex-wrap: wrap; }
-        .service-box { flex: 1; min-width: 300px; padding: 20px; color: #fff; }
-        .plumbing { background: var(--blue); }
-        .welding { background: var(--dark); border-left: 4px solid var(--yellow); }
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 15px; }
-        .grid img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; background: #444; border: 1px solid rgba(255,255,255,0.2); }
-        .btn-wa { display: block; text-align: center; padding: 12px; background: #25d366; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
-        footer { background: #222; color: #ccc; padding: 20px; text-align: center; font-size: 0.8rem; }
+        .box { flex: 1; min-width: 320px; padding: 25px; color: #fff; }
+        .plumb { background: var(--blue); }
+        .weld { background: var(--dark); border-left: 5px solid var(--yellow); }
+        h2 { font-size: 1.6rem; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px; margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        @media (min-width: 600px) { .grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); } }
+        .grid img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #444; }
+        .btn-wa { display: block; text-align: center; padding: 15px; background: #25d366; color: white; text-decoration: none; border-radius: 8px; margin: 20px 0; font-weight: bold; transition: 0.3s; }
+        .btn-wa:hover { opacity: 0.9; transform: translateY(-2px); }
+        footer { background: #222; color: #ccc; padding: 25px; text-align: center; font-size: 0.85rem; }
     </style>
 </head>
 <body>
@@ -25,45 +28,49 @@
 
 <section class="hero">
     <h1>Профессиональный монтаж и сварка</h1>
-    <p>Астана, ул. Кокарал, 1 (Цех). Опыт более 10 лет.</p>
+    <p>г. Астана, ул. Кокарал, 1. Более 10 лет на рынке.</p>
 </section>
 
 <section class="services">
-    <div class="service-box plumbing">
-        <h2>💧 Сантехника</h2>
-        <a href="https://wa.me/77753515355" class="btn-wa">WhatsApp Ербол</a>
+    <div class="box plumb">
+        <h2>💧 Сантехника (Ербол)</h2>
+        <a href="https://wa.me/77753515355" class="btn-wa">Заказать сантехника (WhatsApp)</a>
         <div class="grid">
-            <img src="img/1000460602.jpg">
-            <img src="img/1000460603.jpg">
-            <img src="img/1000460614.jpg">
-            <img src="img/1000460615.jpg">
-            <img src="img/1000460621.jpg">
-            <img src="img/1000461040.jpg">
-            <img src="img/1000461041.jpg">
-            <img src="img/1000461042.jpg">
-            <img src="img/1000461043.jpg">
-            <img src="img/1000460624.webp"> </div>
+            <img src="img/IMG-20260503-WA0014.jpg">
+            <img src="img/IMG-20260503-WA0015.jpg">
+            <img src="img/IMG-20260503-WA0016.jpg">
+            <img src="img/IMG-20260503-WA0018.jpg">
+            <img src="img/IMG-20260503-WA0028.jpg">
+            <img src="img/IMG-20260503-WA0030.jpg">
+            <img src="img/IMG-20260503-WA0042.jpg">
+            <img src="img/IMG-20260503-WA0045.jpg">
+            <img src="img/IMG-20260503-WA0057.jpg">
+            <img src="img/3.webp">
+        </div>
     </div>
 
-    <div class="service-box welding">
-        <h2>🔥 Сварка</h2>
-        <a href="https://wa.me/77788026792" class="btn-wa">WhatsApp Сакен</a>
+    <div class="box weld">
+        <h2>🔥 Сварка (Сакен)</h2>
+        <a href="https://wa.me/77788026792" class="btn-wa">Заказать сварку (WhatsApp)</a>
         <div class="grid">
-            <img src="img/1000460620.png"> <img src="img/1000460630.jpg">
-            <img src="img/1000460632.jpg">
-            <img src="img/1000460633.jpg">
-            <img src="img/1000460636.jpg">
-            <img src="img/1000460637.jpg">
-            <img src="img/1000460638.jpg">
-            <img src="img/1000460639.jpg">
-            <img src="img/1000460640.jpg">
-            <img src="img/1000461039.jpg">
+            <img src="img/IMG-20260503-WA0021.jpg">
+            <img src="img/IMG-20260503-WA0023.jpg">
+            <img src="img/IMG-20260503-WA0027.jpg">
+            <img src="img/IMG-20260503-WA0035.jpg">
+            <img src="img/dasda.jpg">
+            <img src="img/3Nkxc2Pv_sAtRo4c1iCunxfj.jpg">
+            <img src="img/5c0bc338859bbd06e52227.jpg">
+            <img src="img/c7df6367e9284a7dba3bf21.jpg">
+            <img src="img/e04ecd7783c004d05f1f305.jpg">
+            <img src="img/Монтаж тройниковой схем.jpg">
         </div>
     </div>
 </section>
 
 <footer>
-    <p>г. Астана, ул. Көкарал, 1. Instagram: @svarka.astana.2025</p>
+    <p>Адрес: г. Астана, ул. Көкарал, 1 (Цех)</p>
+    <p>Instagram: @svarka.astana.2025</p>
+    <p>© 2026 ИП Юсупов. Качество проверенное временем.</p>
 </footer>
 
 </body>
